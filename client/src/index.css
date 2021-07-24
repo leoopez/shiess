@@ -1,13 +1,209 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+html{
+  font-size: 20px;
+  max-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant: tabular-nums;
+  -webkit-font-feature-settings: 'tnum';
+  font-weight: 400;
+  line-height: 1.5;
+  height: 100%;
+  background-image: linear-gradient(to bottom, #fff 0%, #f3f7f7 100%);
+}
+
+#root{
+  height: 100%;
+  display: grid;
+  grid-gap: 6px;
+  grid-template-rows: auto auto auto;
+}
+
+/* Header Content */
+header{
+  height: auto;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+header > nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 760px;
+}
+
+.nav-masthead {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+
+.nav-masthead > .nav-link{
+  margin-left: 1rem;
+  font-size: 1.15rem;
+  color: #566573;
+  text-decoration:none;
+  border-bottom: 4px solid transparent;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.nav-masthead > .active {
+  color: #0c0c0d;
+  border-bottom-color: #0c0c0d;
+}
+
+.nav-masthead > .nav-link:hover,
+.nav-masthead > .nav-link:focus {
+  border-bottom-color: #566573;
+}
+
+/* Main Content */
+main{
+  height: 80vh;
+  box-shadow: 2px 0 6px 0 rgba(0, 0, 0, 0.2);
+  background-size: auto 100%;
+  background: url(static/black-and-white-1298024_1280.png) no-repeat calc(((100vw - 1480px) / 2) + 1170px * 0.536) 0;
+}
+
+.pr-lay {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 2rem auto 50%;
+}
+
+.ct-in{
+  text-align: center;
+  grid-column-start: 2;
+}
+
+.pr-btn{
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+}
+
+.pr-btn > button{
+  border-radius: .25rem;
+  width:  100px;
+  cursor: pointer;
+  border: 3px solid;
+}
+
+#chess-btn{
+  border-color: #7fa650;
+  color: #7fa650;
+}
+
+#lichess-btn{
+  border-color: #dbdbdb;
+  color: #dbdbdb;
+}
+
+#own-btn{
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.pr-btn > button:hover{
+  box-shadow: 0 0 4px 4px;
+}
+
+/* Footer Content */
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  background: #0c0c0d;
+  color: #dbd7d1;
+}
+
+.github-icon{
+  height: 1.2rem;
+}
+
+.container{
+  width: 560px;
+  height: 560px;
+}
+
+.layout-chessboard{
+  display: grid;
+  grid-template: repeat(8, 1fr) / repeat(8, auto);
+  height: 100%;
+  background: url(static/chessboard/150.png) no-repeat;
+  background-size: 100% 100%;
+  grid-gap: 1px;
+}
+
+.piece{
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.black-rook{
+  background-image: url(static/chessboard/bR.png)
+}
+.white-rook{
+  background-image: url(static/chessboard/wR.png)
+}
+.black-knight{
+  background-image: url(static/chessboard/bN.png)
+}
+.white-knight{
+  background-image: url(static/chessboard/wN.png)
+}
+.black-bishop{
+  background-image: url(static/chessboard/bB.png)
+}
+.white-bishop{
+  background-image: url(static/chessboard/wB.png)
+}
+.black-king{
+  background-image: url(static/chessboard/bK.png)
+}
+.white-king{
+  background-image: url(static/chessboard/wK.png)
+}
+.black-queen{
+  background-image: url(static/chessboard/bQ.png)
+}
+.white-queen{
+  background-image: url(static/chessboard/wQ.png)
+}
+.black-pawn{
+  background-image: url(static/chessboard/bP.png)
+}
+.white-pawn{
+  background-image: url(static/chessboard/wP.png)
+}
+
+@media only screen and (max-width: 768px) {
+  header > nav{
+    width: auto;
+    flex-direction: column;
+  }
+
+  main{
+    background: none;
+  }
+
+  .pr-lay {
+    grid-template-columns: 2rem auto 2rem;
+  }
+
+  .ct-in{
+    text-align: center;
+  }
 }
