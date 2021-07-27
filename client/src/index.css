@@ -131,15 +131,11 @@ footer{
   height: 1.2rem;
 }
 
-.container{
+.layout-chessboard{
   width: 560px;
   height: 560px;
-}
-
-.layout-chessboard{
   display: grid;
   grid-template: repeat(8, 1fr) / repeat(8, auto);
-  height: 100%;
   background: url(static/chessboard/150.png) no-repeat;
   background-size: 100% 100%;
   grid-gap: 1px;
@@ -150,6 +146,10 @@ footer{
   height: 100%;
   background-size: 100%;
   background-repeat: no-repeat;
+}
+
+.piece--select{
+  opacity: 0.5;
 }
 
 .black-rook{
@@ -189,6 +189,9 @@ footer{
   background-image: url(static/chessboard/wP.png)
 }
 
+.no-display{
+  display: none;
+}
 @media only screen and (max-width: 768px) {
   header > nav{
     width: auto;

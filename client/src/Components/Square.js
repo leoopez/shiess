@@ -1,21 +1,12 @@
 import React from "react"
 
-class Square extends React.Component{
-    render(){
-        const pieceClassName = (this.props.piece) ? ` ${this.props.piece}`: "";
-        const divStyle = {
-            gridColumn: this.props.col,
-            gridRow: this.props.row,
-        };
+export default function Square({ id, piece, col, row, onSelct=f=>f }) {
 
-        return(
-            <div
-                id={`square-${this.props.id}`}
-                style={divStyle}
-                className={`piece${pieceClassName}`}>
-            </div>
-        )
-    }
+    return(
+        <div
+             id={`square-${id}`}
+             style={{gridColumn: col, gridRow: row}}
+             className={ `piece ${piece ? piece : ""}`.trim() }>
+        </div>
+    )
 }
-
-export default Square
