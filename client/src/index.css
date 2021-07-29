@@ -138,7 +138,7 @@ footer{
   grid-template: repeat(8, 1fr) / repeat(8, auto);
   background: url(static/chessboard/150.png) no-repeat;
   background-size: 100% 100%;
-  grid-gap: 1px;
+  /*grid-gap: 1px;*/
 }
 
 .piece{
@@ -148,8 +148,9 @@ footer{
   background-repeat: no-repeat;
 }
 
-.piece--select{
-  opacity: 0.5;
+.selected{
+  opacity: 0.9;
+  background-color: #DC7633 ;
 }
 
 .black-rook{

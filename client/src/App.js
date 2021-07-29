@@ -1,6 +1,6 @@
 import React from "react";
 
-import ChessBoard from "./Components/ChessBoard";
+import ChessBoard from "./Components/ChessBoard/ChessBoard";
 import Header from "./Components/Header";
 
 import './index.css';
