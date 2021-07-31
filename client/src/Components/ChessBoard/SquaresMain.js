@@ -5,6 +5,7 @@ const CreateSquares = [
     col: 1,
     piece: "black-rook",
     selected: false,
+    lastMove: false,
   },
   {
     id: 1,
@@ -12,6 +13,7 @@ const CreateSquares = [
     col: 2,
     piece: "black-knight",
     selected: false,
+    lastMove: false,
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const CreateSquares = [
     col: 3,
     piece: "black-bishop",
     selected: false,
+    lastMove: false,
   },
   {
     id: 3,
@@ -26,6 +29,7 @@ const CreateSquares = [
     col: 4,
     piece: "black-king",
     selected: false,
+    lastMove: false,
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ const CreateSquares = [
     col: 5,
     piece: "black-queen",
     selected: false,
+    lastMove: false,
   },
   {
     id: 5,
@@ -40,6 +45,7 @@ const CreateSquares = [
     col: 6,
     piece: "black-bishop",
     selected: false,
+    lastMove: false,
   },
   {
     id: 6,
@@ -47,6 +53,7 @@ const CreateSquares = [
     col: 7,
     piece: "black-knight",
     selected: false,
+    lastMove: false,
   },
   {
     id: 7,
@@ -54,6 +61,7 @@ const CreateSquares = [
     col: 8,
     piece: "black-rook",
     selected: false,
+    lastMove: false,
   },
   {
     id: 8,
@@ -61,6 +69,7 @@ const CreateSquares = [
     col: 1,
     piece: "black-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 9,
@@ -68,6 +77,7 @@ const CreateSquares = [
     col: 2,
     piece: "black-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 10,
@@ -75,6 +85,7 @@ const CreateSquares = [
     col: 3,
     piece: "black-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 11,
@@ -82,6 +93,7 @@ const CreateSquares = [
     col: 4,
     piece: "black-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 12,
@@ -89,6 +101,7 @@ const CreateSquares = [
     col: 5,
     piece: "black-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 13,
@@ -96,6 +109,7 @@ const CreateSquares = [
     col: 6,
     piece: "black-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 14,
@@ -103,6 +117,7 @@ const CreateSquares = [
     col: 7,
     piece: "black-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 15,
@@ -110,6 +125,7 @@ const CreateSquares = [
     col: 8,
     piece: "black-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 16,
@@ -117,6 +133,7 @@ const CreateSquares = [
     col: 1,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 17,
@@ -124,6 +141,7 @@ const CreateSquares = [
     col: 2,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 18,
@@ -131,6 +149,7 @@ const CreateSquares = [
     col: 3,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 19,
@@ -138,6 +157,7 @@ const CreateSquares = [
     col: 4,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 20,
@@ -145,6 +165,7 @@ const CreateSquares = [
     col: 5,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 21,
@@ -152,6 +173,7 @@ const CreateSquares = [
     col: 6,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 22,
@@ -159,6 +181,7 @@ const CreateSquares = [
     col: 7,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 23,
@@ -166,6 +189,7 @@ const CreateSquares = [
     col: 8,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 24,
@@ -173,6 +197,7 @@ const CreateSquares = [
     col: 1,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 25,
@@ -180,6 +205,7 @@ const CreateSquares = [
     col: 2,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 26,
@@ -187,6 +213,7 @@ const CreateSquares = [
     col: 3,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 27,
@@ -194,6 +221,7 @@ const CreateSquares = [
     col: 4,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 28,
@@ -201,6 +229,7 @@ const CreateSquares = [
     col: 5,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 29,
@@ -208,6 +237,7 @@ const CreateSquares = [
     col: 6,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 30,
@@ -215,6 +245,7 @@ const CreateSquares = [
     col: 7,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 31,
@@ -222,6 +253,7 @@ const CreateSquares = [
     col: 8,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 32,
@@ -229,6 +261,7 @@ const CreateSquares = [
     col: 1,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 33,
@@ -236,6 +269,7 @@ const CreateSquares = [
     col: 2,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 34,
@@ -243,6 +277,7 @@ const CreateSquares = [
     col: 3,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 35,
@@ -250,6 +285,7 @@ const CreateSquares = [
     col: 4,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 36,
@@ -257,6 +293,7 @@ const CreateSquares = [
     col: 5,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 37,
@@ -264,6 +301,7 @@ const CreateSquares = [
     col: 6,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 38,
@@ -271,6 +309,7 @@ const CreateSquares = [
     col: 7,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 39,
@@ -278,6 +317,7 @@ const CreateSquares = [
     col: 8,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 40,
@@ -285,6 +325,7 @@ const CreateSquares = [
     col: 1,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 41,
@@ -292,6 +333,7 @@ const CreateSquares = [
     col: 2,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 42,
@@ -299,6 +341,7 @@ const CreateSquares = [
     col: 3,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 43,
@@ -306,6 +349,7 @@ const CreateSquares = [
     col: 4,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 44,
@@ -313,6 +357,7 @@ const CreateSquares = [
     col: 5,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 45,
@@ -320,6 +365,7 @@ const CreateSquares = [
     col: 6,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 46,
@@ -327,6 +373,7 @@ const CreateSquares = [
     col: 7,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 47,
@@ -334,6 +381,7 @@ const CreateSquares = [
     col: 8,
     piece: null,
     selected: false,
+    lastMove: false,
   },
   {
     id: 48,
@@ -341,6 +389,7 @@ const CreateSquares = [
     col: 1,
     piece: "white-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 49,
@@ -348,6 +397,7 @@ const CreateSquares = [
     col: 2,
     piece: "white-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 50,
@@ -355,6 +405,7 @@ const CreateSquares = [
     col: 3,
     piece: "white-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 51,
@@ -362,6 +413,7 @@ const CreateSquares = [
     col: 4,
     piece: "white-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 52,
@@ -369,6 +421,7 @@ const CreateSquares = [
     col: 5,
     piece: "white-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 53,
@@ -376,6 +429,7 @@ const CreateSquares = [
     col: 6,
     piece: "white-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 54,
@@ -383,6 +437,7 @@ const CreateSquares = [
     col: 7,
     piece: "white-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 55,
@@ -390,6 +445,7 @@ const CreateSquares = [
     col: 8,
     piece: "white-pawn",
     selected: false,
+    lastMove: false,
   },
   {
     id: 56,
@@ -397,6 +453,7 @@ const CreateSquares = [
     col: 1,
     piece: "white-rook",
     selected: false,
+    lastMove: false,
   },
   {
     id: 57,
@@ -404,6 +461,7 @@ const CreateSquares = [
     col: 2,
     piece: "white-knight",
     selected: false,
+    lastMove: false,
   },
   {
     id: 58,
@@ -411,6 +469,7 @@ const CreateSquares = [
     col: 3,
     piece: "white-bishop",
     selected: false,
+    lastMove: false,
   },
   {
     id: 59,
@@ -418,6 +477,7 @@ const CreateSquares = [
     col: 4,
     piece: "white-king",
     selected: false,
+    lastMove: false,
   },
   {
     id: 60,
@@ -425,6 +485,7 @@ const CreateSquares = [
     col: 5,
     piece: "white-queen",
     selected: false,
+    lastMove: false,
   },
   {
     id: 61,
@@ -432,6 +493,7 @@ const CreateSquares = [
     col: 6,
     piece: "white-bishop",
     selected: false,
+    lastMove: false,
   },
   {
     id: 62,
@@ -439,6 +501,7 @@ const CreateSquares = [
     col: 7,
     piece: "white-knight",
     selected: false,
+    lastMove: false,
   },
   {
     id: 63,
@@ -446,6 +509,7 @@ const CreateSquares = [
     col: 8,
     piece: "white-rook",
     selected: false,
+    lastMove: false,
   },
 ];
 

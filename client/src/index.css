@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 
-html{
+html {
   font-size: 20px;
   max-height: 100vh;
 }
 
 body {
   margin: 0;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-variant: tabular-nums;
-  -webkit-font-feature-settings: 'tnum';
+  -webkit-font-feature-settings: "tnum";
   font-weight: 400;
   line-height: 1.5;
   height: 100%;
   background-image: linear-gradient(to bottom, #fff 0%, #f3f7f7 100%);
 }
 
-#root{
+#root {
   height: 100%;
   display: grid;
   grid-gap: 6px;
@@ -26,7 +26,7 @@ body {
 }
 
 /* Header Content */
-header{
+header {
   height: auto;
   vertical-align: middle;
   display: flex;
@@ -35,7 +35,7 @@ header{
   box-shadow: 2px 0 6px 0 rgba(0, 0, 0, 0.2);
 }
 
-header > nav{
+header > nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,13 +47,14 @@ header > nav{
   justify-content: flex-end;
 }
 
-.nav-masthead > .nav-link{
+.nav-masthead > .nav-link {
   margin-left: 1rem;
   font-size: 1.15rem;
   color: #566573;
-  text-decoration:none;
+  text-decoration: none;
   border-bottom: 4px solid transparent;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
 }
 
 .nav-masthead > .active {
@@ -67,11 +68,12 @@ header > nav{
 }
 
 /* Main Content */
-main{
+main {
   height: 80vh;
   box-shadow: 2px 0 6px 0 rgba(0, 0, 0, 0.2);
   background-size: auto 100%;
-  background: url(static/black-and-white-1298024_1280.png) no-repeat calc(((100vw - 1480px) / 2) + 1170px * 0.536) 0;
+  /* background: url(static/img/black-and-white-1298024_1280.png) no-repeat */
+  /* calc(((100vw - 1480px) / 2) + 1170px * 0.536) 0; */
 }
 
 .pr-lay {
@@ -80,45 +82,45 @@ main{
   grid-template-columns: 2rem auto 50%;
 }
 
-.ct-in{
+.ct-in {
   text-align: center;
   grid-column-start: 2;
 }
 
-.pr-btn{
+.pr-btn {
   display: flex;
   justify-content: space-around;
   height: 80px;
 }
 
-.pr-btn > button{
-  border-radius: .25rem;
-  width:  100px;
+.pr-btn > button {
+  border-radius: 0.25rem;
+  width: 100px;
   cursor: pointer;
   border: 3px solid;
 }
 
-#chess-btn{
+#chess-btn {
   border-color: #7fa650;
   color: #7fa650;
 }
 
-#lichess-btn{
+#lichess-btn {
   border-color: #dbdbdb;
   color: #dbdbdb;
 }
 
-#own-btn{
+#own-btn {
   border-color: #dc3545;
   color: #dc3545;
 }
 
-.pr-btn > button:hover{
+.pr-btn > button:hover {
   box-shadow: 0 0 4px 4px;
 }
 
 /* Footer Content */
-footer{
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,79 +129,81 @@ footer{
   color: #dbd7d1;
 }
 
-.github-icon{
+.github-icon {
   height: 1.2rem;
 }
 
-.layout-chessboard{
+.layout-chessboard {
   width: 560px;
   height: 560px;
   display: grid;
   grid-template: repeat(8, 1fr) / repeat(8, auto);
-  background: url(static/chessboard/150.png) no-repeat;
+  background: url(static/img/chessboard/150.png) no-repeat;
   background-size: 100% 100%;
   /*grid-gap: 1px;*/
 }
 
-.piece{
+.piece {
   width: 100%;
   height: 100%;
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
-.selected{
-  opacity: 0.9;
-  background-color: #DC7633 ;
+.selected {
+  background-color: #dc7633;
 }
 
-.black-rook{
-  background-image: url(static/chessboard/bR.png)
+.last-selected {
+  background-color: #7dcea0;
 }
-.white-rook{
-  background-image: url(static/chessboard/wR.png)
+.black-rook {
+  background-image: url(static/img/chessboard/bR.png);
 }
-.black-knight{
-  background-image: url(static/chessboard/bN.png)
+.white-rook {
+  background-image: url(static/img/chessboard/wR.png);
 }
-.white-knight{
-  background-image: url(static/chessboard/wN.png)
+.black-knight {
+  background-image: url(static/img/chessboard/bN.png);
 }
-.black-bishop{
-  background-image: url(static/chessboard/bB.png)
+.white-knight {
+  background-image: url(static/img/chessboard/wN.png);
 }
-.white-bishop{
-  background-image: url(static/chessboard/wB.png)
+.black-bishop {
+  background-image: url(static/img/chessboard/bB.png);
 }
-.black-king{
-  background-image: url(static/chessboard/bK.png)
+.white-bishop {
+  background-image: url(static/img/chessboard/wB.png);
 }
-.white-king{
-  background-image: url(static/chessboard/wK.png)
+.black-king {
+  background-image: url(static/img/chessboard/bK.png);
 }
-.black-queen{
-  background-image: url(static/chessboard/bQ.png)
+.white-king {
+  background-image: url(static/img/chessboard/wK.png);
 }
-.white-queen{
-  background-image: url(static/chessboard/wQ.png)
+.black-queen {
+  background-image: url(static/img/chessboard/bQ.png);
 }
-.black-pawn{
-  background-image: url(static/chessboard/bP.png)
+.white-queen {
+  background-image: url(static/img/chessboard/wQ.png);
 }
-.white-pawn{
-  background-image: url(static/chessboard/wP.png)
+.black-pawn {
+  background-image: url(static/img/chessboard/bP.png);
+}
+.white-pawn {
+  background-image: url(static/img/chessboard/wP.png);
 }
 
-.no-display{
+.no-display {
   display: none;
 }
 @media only screen and (max-width: 768px) {
-  header > nav{
+  header > nav {
     width: auto;
     flex-direction: column;
   }
 
-  main{
+  main {
     background: none;
   }
 
@@ -207,7 +211,7 @@ footer{
     grid-template-columns: 2rem auto 2rem;
   }
 
-  .ct-in{
+  .ct-in {
     text-align: center;
   }
 }

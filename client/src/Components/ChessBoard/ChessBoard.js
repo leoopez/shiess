@@ -4,30 +4,34 @@ import CreateSquare from "./SquaresMain";
 import Square from "./Square";
 
 export default function ChessBoard() {
-  const [squares, setSquares] = useState({
-    chessBoard: CreateSquare,
-    status: { pieceOnClick: null, lastPieceOnClick: null },
-  });
+  const [chessBoard, setchessBoard] = useState(CreateSquare);
+  const [pieceOnClick, setPieceOnClick] = useState(null);
+  const [lastPieceOnClick, setLastPieceOnClick] = useState(null);
 
   const onSelect = (id) => {
-    // if (!squares.chessBoard[squares.status.pieceOnClick].piece) return;
-    let newSquares = [...squares.chessBoard];
-    let newStatus = { ...squares.status };
-
-    newSquares[id].selected = true;
-    if (squares.status.pieceOnClick) {
-      newSquares[id].piece = newSquares[squares.status.pieceOnClick].piece;
-
-      newSquares[squares.status.pieceOnClick].selected = false;
-      newSquares[squares.status.pieceOnClick].piece = null;
-      newStatus.pieceOnClick = null;
-    } else {
-      newStatus.pieceOnClick = id;
-    }
-    setSquares({ chessBoard: newSquares, status: newStatus });
+    console.log("In Construction");
+    // if (!chessBoard[id].piece) return;
+    //   let newSquares = [...chessBoard];
+    //   if (pieceOnClick) {
+    //     newSquares[id].piece = newSquares[pieceOnClick].piece;
+    //     newSquares[id].lastMove = true;
+    //     newSquares[pieceOnClick].lastMove = true;
+    //     newSquares[pieceOnClick].selected = false;
+    //     newSquares[pieceOnClick].piece = null;
+    //     if (lastPieceOnClick) {
+    //       newSquares[lastPieceOnClick[0]].lastMove = false;
+    //       newSquares[lastPieceOnClick[0]].lastMove = false;
+    //     }
+    //     setLastPieceOnClick([id, pieceOnClick]);
+    //     setPieceOnClick(null);
+    //   } else {
+    //     newSquares[id].selected = true;
+    //     setPieceOnClick(id);
+    //   }
+    //   setchessBoard(newSquares);
   };
 
-  const squaresInit = squares.chessBoard.map((item) => (
+  const squaresInit = chessBoard.map((item) => (
     <Square
       key={item.id}
       id={item.id}
@@ -36,6 +40,7 @@ export default function ChessBoard() {
       piece={item.piece}
       selected={item.selected}
       onSelect={onSelect}
+      lastSelected={item.lastMove}
     />
   ));
   return <div className="layout-chessboard">{squaresInit}</div>;
