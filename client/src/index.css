@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"); */
 
 html {
   font-size: 20px;
@@ -11,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-variant: tabular-nums;
-  -webkit-font-feature-settings: "tnum";
+  /* -webkit-font-feature-settings: "tnum"; */
   font-weight: 400;
   line-height: 1.5;
   height: 100%;
@@ -138,6 +138,7 @@ footer {
   height: 560px;
   display: grid;
   grid-template: repeat(8, 1fr) / repeat(8, auto);
+  grid-auto-flow: column;
   background: url(static/img/chessboard/150.png) no-repeat;
   background-size: 100% 100%;
   /*grid-gap: 1px;*/
