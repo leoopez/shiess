@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 import bP from "./../../../static/img/chessboard/bP.png";
 import bR from "./../../../static/img/chessboard/bR.png";
@@ -33,15 +33,14 @@ const pieces = {
 
 export default function Square({ piece, col, row }) {
   // const [dragable, setDragable] = useState(null);
-  const onDrop = e => {
-    e.preventDefault();
-    console.log("onDrop");
-  };
+
   return (
-    <div ondrop={onDrop} className='piece' style={{ gridArea: `${col}${row}` }}>
+    <div
+      draggable={piece ? true : false}
+      className={piece ? "piece" : "empty"}
+      style={{ gridArea: `${col}${row}` }}>
       {piece && (
         <img
-          draggable={true}
           className='piece-img'
           src={pieces[`${piece.piece[0]}${piece.color[0].toUpperCase()}`]}
           alt={`${piece.piece[0]}${piece.color[0].toUpperCase()}`}></img>
