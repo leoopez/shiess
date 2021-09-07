@@ -22,15 +22,72 @@
     overflow: hidden;
   }
 
-  .piece {
-    width: 100%;
-    height: 100%;
-    background-size: 100%;
-    background-repeat: no-repeat;
-  }
+ 
   
 .piece-img {
   width: 100%;
     height: 100%;
   background-size: cover;
+}
+
+.piece-selected {
+  opacity: 0.5;
+}
+
+
+.piece {
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+.black-pawn {
+  background-image: url(./../../../static/img/chessboard/bP.png);
+}
+
+.black-rook {
+  background-image: url(./../../../static/img/chessboard/bR.png);
+}
+
+.black-bishop {
+  background-image: url(./../../../static/img/chessboard/bB.png);
+}
+
+.black-knight {
+  background-image: url(./../../../static/img/chessboard/bN.png);
+}
+
+.black-queen {
+  background-image: url(./../../../static/img/chessboard/bQ.png);
+}
+
+.black-king {
+  background-image: url(./../../../static/img/chessboard/bK.png);
+}
+
+.white-pawn {
+  background-image: url(./../../../static/img/chessboard/wP.png);
+}
+
+.white-rook {
+  background-image: url(./../../../static/img/chessboard/wR.png);
+}
+
+.white-knight  {
+  background-image: url(./../../../static/img/chessboard/wN.png);
+}
+
+.white-bishop  {
+  background-image: url(./../../../static/img/chessboard/wB.png);
+}
+
+.white-queen {
+  background-image: url(./../../../static/img/chessboard/wQ.png);
+}
+
+.white-king {
+  background-image: url(./../../../static/img/chessboard/wK.png);
 }
