@@ -7,7 +7,7 @@ export default function ForgetPassword() {
   const { register, handleSubmit } = useForm();
   return (
     <div className='container flex-center justify-center'>
-      <div className='shadow rounded-lg p-6'>
+      <div className='shadow-lg rounded-lg p-6'>
         <form
           onSubmit={handleSubmit(formData => {
             console.log(formData);

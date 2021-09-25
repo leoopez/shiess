@@ -7,7 +7,7 @@ import GoogleAuth from "./GoogleAuth";
 export default function login() {
   return (
     <div className='container flex-center flex-col justify-center'>
-      <div className='shadow rounded-lg p-6 mb-7'>
+      <div className='shadow-lg rounded-lg p-6 mb-7'>
         <form className='flex-center flex-col gap-5'>
           <h1 className='text-lg	text-gray-700 text-center mb-10'>LOGIN</h1>
           <input

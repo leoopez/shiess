@@ -2,10 +2,21 @@
 
 import React, { useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import { SignIn, SignOut } from "../../state/actions/GoogleAuthActions";
 
 export default function GoogleAuth() {
   const [auth, setAuth] = useState();
   const [isSignedIn, setSignedIn] = useState(null);
+
+  const dispatch = useDispatch();
+
+  const { SignInDispatch, SignOutDispatch } = bindActionCreators(
+    { SignIn, SignOut },
+    dispatch
+  );
 
   useEffect(() => {
     window.gapi.load("client:auth2", () => {
@@ -22,7 +33,7 @@ export default function GoogleAuth() {
   }, []);
 
   useEffect(() => {
-    auth?.isSignedIn.listen(setSignedIn(auth.isSignedIn.get()));
+    auth?.isSignedIn.listen(setSignedIn(auth.isSignedIn));
   }, [auth]);
 
   const signIn = () => {
@@ -30,23 +41,10 @@ export default function GoogleAuth() {
     auth.signIn();
   };
 
-  const renderAuthButton = () => {
-    if (isSignedIn === null) {
-      return <div>I dont Know</div>;
-    } else if (isSignedIn) {
-      return <div>Signed In</div>;
-    } else {
-      return <div>Not Signed In</div>;
-    }
-  };
-
   return (
-    <>
-      <div className='flex-center flex-col google-auth'>
-        <div className='mb-4'>Or Connect With</div>
-        <FcGoogle size='2rem' onClick={signIn} />
-      </div>
-      <div>{renderAuthButton()}</div>;
-    </>
+    <div className='flex-center flex-col google-auth'>
+      <div className='mb-4'>Or Connect With</div>
+      <FcGoogle size='2rem' onClick={signIn} />
+    </div>
   );
 }

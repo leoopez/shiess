@@ -1,12 +1,8 @@
 /** @format */
-// import { com/bineReducers } from "redux";
-import chess from "chess";
+import { combineReducers } from "redux";
 
-const gameReducer = (game = chess.create(), action) => {
-  if (action.type === "MOVE") {
-    return game;
-  }
-  return game;
-};
-
-export default gameReducer;
+import GoogleAuthReducer from "./GoogleReducer";
+const reducers = combineReducers({
+  GoogleAuthReducer,
+});
+export default reducers;
