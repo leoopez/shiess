@@ -1,5 +1,5 @@
 /** @format */
-import { combineReducers } from "redux";
+// import { com/bineReducers } from "redux";
 import chess from "chess";
 
 const gameReducer = (game = chess.create(), action) => {
@@ -9,15 +9,4 @@ const gameReducer = (game = chess.create(), action) => {
   return game;
 };
 
-const draggablePiece = (piece = null, action) => {
-  if (action.type === "START") {
-  } else if (action.type === "END") {
-  }
-  return piece;
-};
-
-const reducers = combineReducers({
-  gameReducer,
-});
-
-export default reducers;
+export default gameReducer;
