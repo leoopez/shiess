@@ -9,7 +9,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Login from "./Account/Login";
 import Signup from "./Account/SignUp";
-import ForgetPassword from "./Account/ForgetPassWord";
+import ForgetPassword from "./Account/ForgetPassword";
 
 export default function App() {
   return (

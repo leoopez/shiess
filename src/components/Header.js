@@ -1,14 +1,27 @@
 /** @format */
 
 import React, { useState, useRef } from "react";
-
-import useOnClickOutside from "../hooks/useClickOutside";
-
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { GoogleLogout } from "react-google-login";
+
+import { SignOut } from "../state/actions/GoogleAuth";
+
+//icons
 import { FaChess, FaBars, FaWindowClose } from "react-icons/fa";
+
+//custom Hooks
+import useOnClickOutside from "../hooks/useClickOutside";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const state = useSelector(state => state.GoogleAuthReducer.isSignedIn);
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    dispatch(SignOut);
+  };
+
   const ref = useRef();
   useOnClickOutside(ref, () => setIsOpen(false));
   return (
@@ -25,23 +38,7 @@ export default function Nav() {
                 </Link>
               </div>
               <div className='hidden sm:block'>
-                <div className='ml-10 flex items-baseline space-x-4'>
-                  <Link to='/chessboard'>
-                    <li className='hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
-                      Try
-                    </li>
-                  </Link>
-                  <Link to='/accounts/signup'>
-                    <li className='hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
-                      Sign Up
-                    </li>
-                  </Link>
-                  <Link to='/accounts/login'>
-                    <li className='hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
-                      Log In
-                    </li>
-                  </Link>
-                </div>
+                <Navbar login={state} logout={logout} dispatch={dispatch} />
               </div>
             </div>
             <div className='-mr-2 flex sm:hidden'>
@@ -65,26 +62,40 @@ export default function Nav() {
             className='sm:hidden'
             id='mobile-menu'
             onClick={() => setIsOpen(!isOpen)}>
-            <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-              <Link to='/chessboard'>
-                <li className='hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium'>
-                  Try
-                </li>
-              </Link>
-              <Link to='/accounts/signup'>
-                <li className='hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium'>
-                  Sign Up
-                </li>
-              </Link>
-              <Link to='/accounts/login'>
-                <li className='hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium'>
-                  Log In
-                </li>
-              </Link>
-            </div>
+            <Navbar login={state} logout={logout} dispatch={dispatch} />
           </div>
         )}
       </nav>
     </div>
   );
 }
+
+const Navbar = ({ login, logout, dispatch }) => {
+  return (
+    <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
+      {!login ? (
+        <>
+          <NavItem to='/chessboard'>Try</NavItem>
+          <NavItem to='/accounts/signup'> Sign Up</NavItem>
+          <NavItem to='/accounts/login'>Log In</NavItem>
+        </>
+      ) : (
+        <GoogleLogout
+          clientId='225445742479-j1749s84rohn277d25mbtq48vsmq6huo.apps.googleusercontent.com'
+          buttonText='Logout'
+          onLogoutSuccess={logout}
+        />
+      )}
+    </div>
+  );
+};
+
+const NavItem = ({ to, children }) => {
+  return (
+    <Link to={to}>
+      <li className='hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium'>
+        {children}
+      </li>
+    </Link>
+  );
+};
