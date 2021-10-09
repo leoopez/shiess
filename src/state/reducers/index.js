@@ -1,10 +1,10 @@
 /** @format */
 import { combineReducers } from "redux";
 
-import GoogleAuthReducer from "./GoogleAuth";
+import FirebaseAuthReducer from "./FirebaseAuth";
 
 const reducers = combineReducers({
-  GoogleAuthReducer,
+  auth: FirebaseAuthReducer,
 });
 
 export default reducers;

@@ -3,9 +3,8 @@
 import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { GoogleLogout } from "react-google-login";
 
-import { SignOut } from "../state/actions/GoogleAuth";
+// import { signOut } from "../state/actions/FirbaseAuth";
 
 //icons
 import { FaChess, FaBars, FaWindowClose } from "react-icons/fa";
@@ -15,12 +14,8 @@ import useOnClickOutside from "../hooks/useClickOutside";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-  const state = useSelector(state => state.GoogleAuthReducer.isSignedIn);
+  const login = useSelector(state => state.auth.isSignedIn);
   const dispatch = useDispatch();
-
-  const logout = () => {
-    dispatch(SignOut);
-  };
 
   const ref = useRef();
   useOnClickOutside(ref, () => setIsOpen(false));
@@ -28,17 +23,29 @@ export default function Nav() {
     <div>
       <nav ref={ref}>
         <div className='max-w-7xl mx-auto px-4'>
-          <div className='flex items-center justify-between h-16'>
-            <div className='flex items-center justify-between'>
-              <div className='flex-shrink-0'>
-                <Link to='/'>
-                  <span className='inline-block hover:bg-gray-700 hover:text-white p-1 rounded'>
-                    <FaChess size={"2rem"} className='text-gray-600' />
-                  </span>
-                </Link>
-              </div>
-              <div className='hidden sm:block'>
-                <Navbar login={state} logout={logout} dispatch={dispatch} />
+          <div className='flex items-center justify-between w-full'>
+            <div className=''>
+              <Link to='/'>
+                <span className='inline-block hover:bg-gray-700 hover:text-white p-1 rounded'>
+                  <FaChess size={"2rem"} />
+                </span>
+              </Link>
+            </div>
+            <div className='hidden sm:block'>
+              <div className='flex items-center px-2 pt-2 pb-3 space-y-1 sm:px-3'>
+                {!login ? (
+                  <>
+                    <NavItem to='/chessboard'>Try</NavItem>
+                    <NavItem to='/accounts/signup'>Sign Up</NavItem>
+                    <NavItem to='/accounts/login'>Log In</NavItem>
+                  </>
+                ) : (
+                  <>
+                    <NavItem to='/chessboard'>Up Game</NavItem>
+                    <NavItem to='/accounts/login'>Log In</NavItem>
+                    <NavItem to='/accounts/signup'>Sign Up</NavItem>
+                  </>
+                )}
               </div>
             </div>
             <div className='-mr-2 flex sm:hidden'>
@@ -62,7 +69,21 @@ export default function Nav() {
             className='sm:hidden'
             id='mobile-menu'
             onClick={() => setIsOpen(!isOpen)}>
-            <Navbar login={state} logout={logout} dispatch={dispatch} />
+            <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
+              {!login ? (
+                <>
+                  <NavItem to='/chessboard'>Try</NavItem>
+                  <NavItem to='/accounts/login'>Log In</NavItem>
+                  <NavItem to='/accounts/signup'>Sign Up</NavItem>
+                </>
+              ) : (
+                <>
+                  <NavItem to='/chessboard'>Up Game</NavItem>
+                  <NavItem to='/accounts/login'>Log In</NavItem>
+                  <NavItem to='/accounts/signup'>Sign Up</NavItem>
+                </>
+              )}
+            </div>
           </div>
         )}
       </nav>
@@ -70,32 +91,10 @@ export default function Nav() {
   );
 }
 
-const Navbar = ({ login, logout, dispatch }) => {
-  return (
-    <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-      {!login ? (
-        <>
-          <NavItem to='/chessboard'>Try</NavItem>
-          <NavItem to='/accounts/signup'> Sign Up</NavItem>
-          <NavItem to='/accounts/login'>Log In</NavItem>
-        </>
-      ) : (
-        <GoogleLogout
-          clientId='225445742479-j1749s84rohn277d25mbtq48vsmq6huo.apps.googleusercontent.com'
-          buttonText='Logout'
-          onLogoutSuccess={logout}
-        />
-      )}
-    </div>
-  );
-};
-
 const NavItem = ({ to, children }) => {
   return (
     <Link to={to}>
-      <li className='hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium'>
-        {children}
-      </li>
+      <li className='nav--item'>{children}</li>
     </Link>
   );
 };
