@@ -15,7 +15,7 @@ import {
   signInMiddleware,
 } from "./state/middleware/FirebaseAuth";
 
-import app from "./firebase";
+// import app from "./firebase";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 // import { signOut } from "../state/actions/FirbaseAuth";
@@ -15,7 +15,7 @@ import useOnClickOutside from "../hooks/useClickOutside";
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const login = useSelector(state => state.auth.isSignedIn);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const ref = useRef();
   useOnClickOutside(ref, () => setIsOpen(false));

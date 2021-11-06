@@ -4,7 +4,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 export default function ForgetPassword() {
-  const { register, handleSubmit } = useForm();
+  const { handleSubmit } = useForm();
   return (
     <div className='container flex-center justify-center'>
       <div className='shadow-lg rounded-lg p-6'>
@@ -21,7 +21,6 @@ export default function ForgetPassword() {
             type='email'
             placeholder='email*'
             className='font-bold container rounded p-1 bg-gray-100 text-gray-800'
-            // ref={register({ required: "required" })}
           />
 
           <input
